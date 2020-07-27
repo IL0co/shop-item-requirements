@@ -1,0 +1,49 @@
+"ItemRequiremets"
+{
+	"skip completed"	"0"	// (bool) Скрывать ли выполненные требования?
+	"skip admin flag"	""	// Пропускает требования вещи для админов с этим флагом, "" - что бы убрать фильт флага (то-есть админы тоже должны выполнить требования)
+	
+	"Patricle_Tracers"		// Category id
+	{
+		"tracer_taser"		// Item id
+		{
+			"To Buy"		// Требования к покупке
+			{
+				"Buyed" 	// Должны быть куплены предметы:
+				{
+					"chat_ends"				"end1"	
+					"mining_farm"			"mining_farm:>20"		// Предмет типа Item_Finite, можно указать количество через "item_id:count". В "Equipped" Item_Finite НЕДОСТУПЕН! и будет пропускатся
+					
+				//	"mining_farm"			"mining_farm:>5"	Знак '>' - нужно как минимум 6 штук и выше
+				//	"mining_farm"			"mining_farm:<5"	Знак '<' - нужно как максимум 4 штук и ниже
+				//	"mining_farm"			"mining_farm:5"	Без знака - нужно ровно столько штук
+				}
+				
+				"Equipped" 	// Должны быть одеты предметы:
+				{
+					"chat_ends"				"end1"			// "category id" 	"item id"
+					"mining_farm"			"mining_farm"	
+					
+					// 	И так далее перечисление...
+				}
+			}
+			
+			"To Equip"		// Требования к использованию (что бы включить, одеть), предметы типа Item_Finite (аптечки) будут пропускатся, ибо их никак не одеть!
+			{
+				"Buyed" 	
+				{
+					"chat_ends"				"end1"	
+				}
+				
+				"Equipped" 	
+				{
+					"chat_ends"				"end1"	
+				}
+			}
+		}
+		
+		// 	И так далее перечисление...
+	}
+	
+// 	И так далее перечисление...
+}
