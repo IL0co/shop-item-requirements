@@ -396,7 +396,10 @@ stock bool CheckClientRequrements(int client, const char[] JumpTo, bool isPrint 
 					if(!bRestrict && iBool)
 						bRestrict = iBool;
 
-					if(isPrint || isVipOnlyMode || isAdminFlagOnlyMode && (!gSkipComleted && iBool))
+					if(gSkipComleted && iBool)
+						continue;
+
+					if(isPrint || isVipOnlyMode || isAdminFlagOnlyMode)
 					{
 						if(!once)
 						{
